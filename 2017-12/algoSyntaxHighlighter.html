@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>ALGO: A shitty syntax highlighter</title>
+<style>
+* { padding: 0; border: 0; margin: 0; }
+
+body { background-color: beige; }
+
+#input, #output{
+    height: 95%;
+    width: 95%;
+    padding: 15px 0 0 15px;
+    font-size: large;
+}
+#input {
+    background-color: transparent;
+    color: transparent;
+    caret-color: black;
+    position: absolute;
+    outline: none;
+}
+
+.number { color: orange; }
+.keyword { font-weight: bold; }
+.keyword, .operator, .type { color: red; }
+.string, .string * { color: gray; font-weight: normal; }
+.comment, .comment * { color: green; font-weight: normal; }
+</style>
+</head>
+
+<body onload="update();">
+<textarea id="input" oninput="update();" spellcheck="false">
+Algorithme Malice;
+
+Variable
+  name: chaine de caractere;
+  age: entier;
+
+Debut
+  ecrire('hey?');
+  lire(name, age);
+  si name = 'Alice' et age > 18 alors
+    ecrire('I Wonder...') //  \(>_<)/
+  fin si
+Fin.
+</textarea>
+<pre id="output"></pre>
+
+<script>
+function update(){
+    var input  = document.getElementById('input');
+    var output = document.getElementById('output');
+
+    var operators = ['div', 'mod', 'et', 'ou'];
+    var keywords  = ['algorithme', 'constante', 'variable', 'procedure', 'fonction',
+                     'debut', 'fin', 'lire', 'ecrire', 'si', 'sinon', 'alors',
+                     'selon', 'repeater', 'jusqua', 'pour', 'a', 'tantque', 'faire'];
+    var types     = ['var', 'entier', 'reel', 'caractere', 'chaine de', 'tableau de'];
+
+    var rOperator = RegExp('\\b(' + operators.join('|') + ')\\b','ig');
+    var rKeyword  = RegExp('\\b(' + keywords.join('|') + ')\\b','ig');
+    var rType     = RegExp('\\b(' + types.join('|') + ')\\b','ig');
+    var rNumber   = /\b([0-9]+\.?[0-9]*)\b/ig;
+    var rString   = /('.+?')/ig;
+    var rComment  = /(\/\/.*)/ig;
+
+    output.innerHTML =  input.value
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(rOperator, '<span class="operator">$&</span>')
+        .replace(rKeyword,  '<span class="keyword">$&</span>')
+        .replace(rType,     '<span class="type">$&</span>')
+        .replace(rComment,  '<span class="comment">$&</span>')
+        .replace(rString,   '<span class="string">$&</span>')
+        .replace(rNumber,   '<span class="number">$&</span>');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+// ~2018-05-05
+// Exercise:
+// Write a function that returns whether a "singly linked list" is palindromic.
+// Why am I uploading it? To remember my "over complicated solution" - Teacher
+
+FONCTION estPalindromique(tete: Liste) : Booleen;
+
+VARIABLE
+i, j, k: Entier;
+pa, pb: Liste; // pointer to the start and pointer to the end
+r: Booleen;
+
+DEBUT
+  j <- 0;
+  pa <- tete;
+  tantque pa != nil faire
+    j <- j + 1;
+    pa <- pa^.suiv
+  fin tantque;
+
+  i <- 1;
+  r <- vrai;
+  pa <- tete;
+
+  tantque r = vrai et i < j faire
+    // k <- 1;
+    pb <- tete;
+    pour k <- 2 à faire
+      pb <- pb^.suiv
+    fin pour;
+
+    si pa^.info = pb^.info alors
+      j <- j - 1;
+      i <- i + 1;
+      pa <- pa^.suiv
+    sinon
+      r <- faux
+    fin si
+
+  fin tantque;
+
+  estPalindromique <- r
+
+FIN;

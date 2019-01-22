@@ -1,0 +1,26 @@
+algorithme dec_to_bin_divide;
+variable
+  dec, ten, s : entier;
+  va: reel;
+
+debut
+  lire(dec);
+  
+  si dec < 0 alors
+    s <- 1
+  sinon
+    s <- 0
+  FinSi;
+  
+  va  <- 0;
+  ten <- 1;
+  tantque dec != 0 faire
+    ten <- ten * 10;
+    va  <- va/10 + (dec mod 2)/10;
+    dec <- dec div 2
+  fintantque;
+  
+  va <- va * ten;
+  
+  ecrire('En SVA: ', s, va)
+Fin.

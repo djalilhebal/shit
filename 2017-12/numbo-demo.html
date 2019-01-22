@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+<title>Numbo TODO</title>
+</head>
+<body>
+  <div style="
+  background: orange;
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  border-radius: 30px 30px 0px 0px;
+  ">Numbo TODO</div>
+  
+   <div id="all" style="
+    background: darkorange;
+    color: white;
+    padding: 10px;
+    height: 80px;
+    text-align: center;
+    border-radius: 0px 0px 30px 30px;
+  ">    
+    <input id="inp" onkeyup="go();" value="maliciously" placeholder="..." style="
+    text-align: center;
+    font-size: 18px;
+    border: 0;
+    padding: 5px;
+    border-radius: 15px;
+    width: 100%;
+    outline: none;
+    ">
+    <div id="txt" style="padding: 5px;">MLXSL</div>
+    <div id="num" style="padding: 5px; letter-spacing: 2px;">31801</div>
+  </div>
+<p style="white-space: pre-line;">
+This is an example of the OPPOSITE of what I'm trying to do!
+Eh, I'm trying to "develop" a simple (complex tbh) app that aids me in generating mnemonics  of numbers, using the <b>Phonetic Number System</b> (AKA Major System)... It should output some "meaningful" English sentences/phrases/words; but to make this trick, I first need to learn how to efficiently implement the following:
+
+ * A <b>transcription</b>/<b>DoubleMetaphone</b>-like algorithm.
+ (actually to make this "demo", I translated the Apache implementation of DM from Java to JavaScript and heavily edited it; still, it sucks...)
+ 
+ * Something like a <b>Markov text generator</b>/scorer
+ (like, the sequence "sweet dreams" is more probable than "sit drama so")
+ 
+ * A simple <b>grammar/rule matcher</b> like those in the JS libraries: <i>nlp compromise</i> and <i>{{sentencer}}</i>.
+ (so that "#noun #verb #noun" matches "people love cats")
+ 
+ * Maybe I should start by trying to "make" a basic <b>RegEx Engine</b> as they have the same "logic". Perhaps translate the <i>SLRE</i> engine from C to JS? Probably.
+
+ * <b>Poetry</b>-related stuff scorer: rhyme, alliteration, assonance, consonance, number of syllables, and whatnot!
+ (these make phrases easy to recall, y'all!)
+
+ * isPassiveVoice? (the active voice is better)
+
+ * A rudimentary <b>Sentiment Analysis</b> trick
+ (I rather memorize positive phrases ;-;)
+
+ * Adding some "semantic field, hyponym and hypernym"-ish stuff would be nice OvO
+ (like, wanting to memorize the date of the Algerian agricultural reform or idk to pass my Bac exam: 08-11-1971 > 081171 > SXLLFL > "SuCH LiL FLour ain't enough!", it's like a meaningful sentence that talks about the topic: flour ~ wheat and other cereal grains ~ agriculture... and, yeah, I know, only the first six "consonant sounds" are used)
+
+ * ... and other stuff.
+ 
+This is like my 2018 TODO list :p
+</p>
+<script>
+var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.ASSUME_ES5=!1;$jscomp.ASSUME_NO_NATIVE_MAP=!1;$jscomp.ASSUME_NO_NATIVE_SET=!1;$jscomp.defineProperty=$jscomp.ASSUME_ES5||"function"==typeof Object.defineProperties?Object.defineProperty:function(b,g,f){b!=Array.prototype&&b!=Object.prototype&&(b[g]=f.value)};$jscomp.getGlobal=function(b){return"undefined"!=typeof window&&window===b?b:"undefined"!=typeof global&&null!=global?global:b};$jscomp.global=$jscomp.getGlobal(this);$jscomp.SYMBOL_PREFIX="jscomp_symbol_";
+$jscomp.initSymbol=function(){$jscomp.initSymbol=function(){};$jscomp.global.Symbol||($jscomp.global.Symbol=$jscomp.Symbol)};$jscomp.Symbol=function(){var b=0;return function(g){return $jscomp.SYMBOL_PREFIX+(g||"")+b++}}();
+$jscomp.initSymbolIterator=function(){$jscomp.initSymbol();var b=$jscomp.global.Symbol.iterator;b||(b=$jscomp.global.Symbol.iterator=$jscomp.global.Symbol("iterator"));"function"!=typeof Array.prototype[b]&&$jscomp.defineProperty(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return $jscomp.arrayIterator(this)}});$jscomp.initSymbolIterator=function(){}};$jscomp.arrayIterator=function(b){var g=0;return $jscomp.iteratorPrototype(function(){return g<b.length?{done:!1,value:b[g++]}:{done:!0}})};
+$jscomp.iteratorPrototype=function(b){$jscomp.initSymbolIterator();b={next:b};b[$jscomp.global.Symbol.iterator]=function(){return this};return b};$jscomp.makeIterator=function(b){$jscomp.initSymbolIterator();var g=b[Symbol.iterator];return g?g.call(b):$jscomp.arrayIterator(b)};
+$jscomp.polyfill=function(b,g,f,h){if(g){f=$jscomp.global;b=b.split(".");for(h=0;h<b.length-1;h++){var l=b[h];l in f||(f[l]={});f=f[l]}b=b[b.length-1];h=f[b];g=g(h);g!=h&&null!=g&&$jscomp.defineProperty(f,b,{configurable:!0,writable:!0,value:g})}};$jscomp.polyfill("Object.is",function(b){return b?b:function(b,f){return b===f?0!==b||1/b===1/f:b!==b&&f!==f}},"es6","es3");
+$jscomp.polyfill("Array.prototype.includes",function(b){return b?b:function(b,f){var g=this;g instanceof String&&(g=String(g));var l=g.length;for(f=f||0;f<l;f++)if(g[f]==b||Object.is(g[f],b))return!0;return!1}},"es7","es3");
+$jscomp.checkStringArgs=function(b,g,f){if(null==b)throw new TypeError("The 'this' value for String.prototype."+f+" must not be null or undefined");if(g instanceof RegExp)throw new TypeError("First argument to String.prototype."+f+" must not be a regular expression");return b+""};$jscomp.polyfill("String.prototype.includes",function(b){return b?b:function(b,f){return-1!==$jscomp.checkStringArgs(this,b,"includes").indexOf(b,f||0)}},"es6","es3");
+$jscomp.polyfill("String.prototype.startsWith",function(b){return b?b:function(b,f){var g=$jscomp.checkStringArgs(this,b,"startsWith");b+="";var l=g.length,m=b.length;f=Math.max(0,Math.min(f|0,g.length));for(var e=0;e<m&&f<l;)if(g[f++]!=b[e++])return!1;return e>=m}},"es6","es3");
+function go(){function b(b){function f(a){return-1!="AEIOUY".indexOf(a)}function e(a,b,c){if(0<=a&&a+b<=d.length){target=d.substring(a,a+b);if("string"==typeof c)return target==c;a=$jscomp.makeIterator(c);for(b=a.next();!b.done;b=a.next())if(target==b.value)return!0}return!1}var g="ES EP EB EL EY IB IL IN IE EI ER".split(" "),h=["SURE","SUGAR","TECH","EPOCH"],l=["XR","XGR","TK","PK"],a=0,c=[],d=(b||"").toUpperCase().trim();return d?h.includes(d)?l[h.indexOf(d)]:function(){var b=d;b.includes("W")||
+b.includes("K")||b.includes("CZ")||b.includes("WITZ");a:{b=d;for(var k=$jscomp.makeIterator(["GN","KN","PN","WR","PS"]),h=k.next();!h.done;h=k.next())if(b.startsWith(h.value)){b=!0;break a}b=!1}for(a=b?1:0;a<d.length;)switch(d[a]){case "A":case "E":case "I":case "O":case "U":case "Y":a+=1;break;case "B":c.push("B");a+="B"==d[a+1]?2:1;break;case "\u00c7":c.push("S");a+=1;break;case "C":b=d;k=a;e(k,4,"CHIA")||(1>=k?0:f(b[k-2])?0:e(k-1,3,"ACH")&&("I"!=b[k+2]&&"E"!=b[k+2]||e(k-2,6,"BACHER","MACHER")))?
+(c.push("K"),a+=2):"H"==d[a+1]?((b=a+2<d.length)&&!(b=0!=a?!1:e(a+1,5,["HARAC","HARIS"])||e(a+1,3,["HOR","HYM","HIA","HEM"])?e(0,5,"CHORE")?!1:!0:!1)&&(b=d,b=e(0,3,"SCH")||e(a-2,6,["ORCHES","ARCHIT","ORCHID"])||e(a+2,1,["T","S"])||(e(a-1,1,["A","O","U","E"])||0==a)&&(e(a+2,1,"LRNMBHFVW ".split(""))||a+1==b.length-1)),b?c.push("K"):c.push("X"),a+=2):"Z"!=d[a+1]||e(a-2,4,"WICZ")?"C"!=d[a+1]||1==a&&"M"==d[0]?e(a,2,["CK","CG","CQ"])?(c.push("K"),a+=2):e(a,2,["CI","CE","CY"])?(e(a,3,["CIO","CIE","CIA"])?
+c.push("X"):c.push("S"),a+=2):(c.push("K"),a=e(a+1,2,[" C"," Q"," G"])?a+3:e(a+1,1,["C","K","Q"])&&!e(a+1,2,["CE","CI"])?a+2:a+1):e(a+2,1,["I","E","H"])&&!e(a+2,2,"HU")?(1==a&&"A"==d[a-1]||e(a-1,5,["UCCEE","UCCES"])?c.push("KS"):c.push("X"),a+=3):(c.push("K"),a+=2):(c.push("S"),a+=2);break;case "D":"G"==d[a+1]&&["I","E","Y"].includes(d[a+2])?(c.push("J"),a+=3):(c.push("D"),a+="D"==d[a+1]?2:1);break;case "F":c.push("F");a+="F"==d[a+1]?2:1;break;case "G":b=a;"H"==d[a+1]?(0<a&&!f(d[a-1])?c.push("G"):
+0==a?"I"==d[a+2]?c.push("J"):c.push("G"):1<a&&e(a-2,1,["B","H","D"])||2<a&&e(a-3,1,["B","H","D"])||3<a&&e(a-4,1,["B","H"])||(2<a&&"U"==d[a-1]&&e(a-3,1,["C","G","L","R","T"])?c.push("F"):0<a&&"I"!=d[a-1]&&c.push("G")),a+=2):"N"==d[a+1]?(1==a&&f(d[0])&&!b?c.push("GN"):e(a+2,2,"EY")||"Y"==d[a+1]||b?c.push("GN"):c.push("N"),a+=2):0!=a||"Y"!=d[a+1]&&!e(a+1,2,g)?!e(a+1,2,"ER")&&"Y"!=d[a+1]||e(0,6,["DANGER","RANGER","MANGER"])||e(a-1,1,["E","I"])||e(a-1,3,["RGY","OGY"])?e(a+1,1,["E","I","Y"])||e(a-1,4,["AGGI",
+"OGGI"])?(c.push("J"),a+=2):(c.push("G"),a+="G"==d[a+1]?2:1):(c.push("G"),a+=2):(c.push("G"),a+=2);break;case "H":a+=1;break;case "J":c.push("J");a+="J"==d[a+1]?2:1;break;case "K":c.push("K");a+="K"==d[a+1]?2:1;break;case "L":c.push("L");a+="L"==d[a+1]?2:1;break;case "M":c.push("M");b=a;k=d;h=a;k="M"==k[h+1]?!0:e(h-1,3,"UMB")&&(h+1==k.length-1||e(h+2,2,"ER"));a=b+(k?2:1);break;case "N":c.push("N");a+="N"==d[a+1]?2:1;break;case "\u00d1":c.push("N");a+=1;break;case "P":"H"==d[a+1]?(c.push("F"),a+=2):
+(c.push("P"),a+="P"==d[a+1]?2:1);break;case "Q":c.push("K");a+="Q"==d[a+1]?2:1;break;case "R":c.push("R");a+="R"==d[a+1]?2:1;break;case "S":e(a-1,3,["ISL","YSL"])?a+=1:e(a,2,"SH")?(c.push("X"),a+=2):e(a,3,["SIO","SIA"])||e(a,4,"SIAN")?(c.push("S"),a+=3):0==a&&e(a+1,1,["M","N","L","W"])||"Z"==d[a+1]?(c.push("S"),a+="Z"==d[a+1]?2:1):e(a,2,"SC")?("H"==d[a+2]?e(a+3,2,"OO ER EN UY ED EM".split(" "))?e(a+3,2,["ER","EN"])?c.push("X"):c.push("SK"):0!=a||f(d[a+3])||"W"==d[a+3]||c.push("X"):e(a+2,1,["I","E",
+"Y"])?c.push("S"):c.push("SK"),a+=3):(c.push("S"),a+="Z"==d[a+1]||"S"==d[a+1]?2:1);break;case "T":e(a,4,"TION")||e(a,3,["TIA","TCH"])?(c.push("X"),a+=3):"H"==d[a+1]?(c.push("T"),a+=2):(c.push("T"),a+="T"==d[a+1]?2:1);break;case "V":c.push("V");a+="V"==d[a+1]?2:1;break;case "W":a+=1;break;case "X":0==a?(c.push("S"),a+=1):(a==d.length-1&&(e(a-3,3,"IAU","EAU")||e(a-2,2,"AU","OU"))||c.push("KS"),a+="C"==d[a+1]||"X"==d[a+1]?2:1);break;case "Z":c.push("S");a+="Z"==d[a+1]?2:1;break;default:a+=1}return c}().join(""):
+""}var g={S:"0",L:"1",N:"2",M:"3",R:"4",V:"5",B:"6",D:"6",T:"7",F:"7",X:"8",G:"9"},f=document.getElementById("inp").value.trim().replace(/\s+/g," ").split(" ").map(function(f){return b(f)}).join(""),h=f.split("").map(function(b){return g[b]||""}).join("");f||(f="-");h||(h="-");document.getElementById("txt").innerHTML=f;document.getElementById("num").innerHTML=h};
+</script>
+</body>
+</html>

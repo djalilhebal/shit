@@ -1,0 +1,29 @@
+algorithme dec_to_bin_multiply;
+variable
+    dec, tmp, s, va: entier;
+
+debut
+  lire(dec);
+  
+  si dec < 0 alors
+      s <- 1
+  sinon
+      s <- 0
+  FinSi;
+  
+  tmp <- 1; // to catch zeros (we'll remove this "1" later)
+  tantque dec != 0 faire
+    tmp <- tmp*10 + dec mod 2;
+    dec <- dec div 2
+  fintantque;
+  
+  va <- 0;
+  tantque tmp != 0 faire
+    va <- va*10 + tmp mod 10;
+    tmp <- tmp div 10
+  fintantque;
+  
+  va <- va div 10; // removing that "1"
+  
+  ecrire('En SVA: ', s, va)
+Fin.

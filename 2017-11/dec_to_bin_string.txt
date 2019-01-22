@@ -1,0 +1,28 @@
+algorithme dec_to_bin_string;
+variable
+  dec: entier;
+  s  : caracter;
+  va : chaine de caracter;
+
+debut
+  lire(dec);
+  
+  si dec < 0 alors
+      s <- '1'
+  sinon
+      s <- '0'
+  FinSi;
+  
+  va <- '';
+  
+  repeater
+    si dec mod 2 = 0 alors 
+        va <- '0' + va
+    sinon
+        va <- '1' + va    
+    finSi;
+    dec <- dec div 2;
+  justqu'a dec = 0;
+  
+  ecrire('En SVA: ', s, va)
+Fin.

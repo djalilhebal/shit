@@ -1,0 +1,17 @@
+Subject: [AO][Student][G06] We have solved all the exercises.
+
+As for your question ("Rana fahmin ou nn?"), I can only speak for myself and for my comrades: Yes, we do.
+
+Anyway, my friend (...) and I (...) have read Microsoft's "MASM 6.1 Programmer's Guide" (it contains 300-something pages). Using what we learned we solved all the exercises. [in the attachments]
+
+I am sending them to you so as you can check them and point out any mistakes or notes... and in hopes that we get a good grade/mark :p
+
+PS: All of these codes have been tested and double-tested.
+
+PSS: We wrote them by ourselves, we do understand the meaning of each instruction/line we used.
+
+PSSS: I know we use MASM 5.1: The book we read explains the differences between v5.1 and 6.1; we were careful to use only what works with our version.
+
+That's all.
+
+Have a good day, sir.

@@ -1,0 +1,49 @@
+* {padding: 0; margin: 0; border:0;}
+
+h1 {font-family: cursive;}
+
+body {
+  margin: 15px;
+  background: pink;
+}
+
+#input {
+  background: mediumvioletred;
+  color: white;
+  padding: 20px;
+  border-radius: 25px 25px 0px 0px;
+  text-align: center;
+}
+
+#x, #y {
+  text-align: center;
+  padding: 7px;
+  font-size: 17px;
+}
+
+button {
+  cursor: pointer;
+  padding: 6px;
+  width: 50px;
+  background: deeppink;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+#output {
+  background: white;
+  padding: 10px;
+  border-bottom: 2px solid mediumvioletred;
+  border-radius: 0px 0px 25px 25px;
+  text-align: center;
+}
+
+#output b {color: deeppink;}
+
+pre {
+  border: 2px dashed deeppink;
+  padding: 10px;
+  white-space: pre-line;
+}

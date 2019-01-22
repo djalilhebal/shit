@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <title>retardedAO</title>
+    <style>
+    * { padding: 0; border: 0; margin: 0; }
+    #input, #output {
+      height: -webkit-fill-available;
+      width: -webkit-fill-available;
+      padding-top: 5px;
+      font-family: monospace;
+      font-size: 18px;
+      overflow: hidden;
+    }
+    #input {
+      background-color: transparent;
+      color: transparent;
+      caret-color: white;
+      position: absolute;
+      outline: none;
+      margin-left: 15px;
+      overflow-y: auto;
+    }
+    #output {
+      background-color: black;
+      color: white;
+      padding-left: 15px;
+    }
+    .string { color: gray; }
+    .comment {color: lime;font-style: italic;}
+    .keyword, .operator {color: darkmagenta;}
+    .keyword { font-weight: bold; }
+    .register {color: cornflowerblue;}
+    .number { color: orange; }
+    #run {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      opacity: 0.75;
+      padding: 10px;
+      margin: 25px;
+      font-size: 25px;
+      font-weight: bold;
+      font-family: cursive;
+      border-radius: 50px;
+      color: white;
+      background: purple;
+      border-top: 2px dashed;
+      border-bottom: 2px dashed;
+      cursor: pointer;
+    }
+    .error, .warning {
+      border-bottom: 1.5px dashed;
+      border-left: 10px solid;
+      margin-left: -13px;
+      padding-left: 3px;
+    }
+    .error { border-color: red;}
+    .warning { border-color: yellow;}
+    </style>
+  </head>
+
+  <body onload="init();">
+    <textarea id="input" oninput="draw();" spellcheck="false">
+;; RetardedAO -- A retarded MASM write-highlight-run thingy. (2018-11-05)
+;; It's not good, but it's good enough for me~~ \(>.<)/
+;; Tested using nwjs v0.23.4 x32, DOSBox v0.74 x32, Windows 10 Pro x64.
+;; Note: DOSBox.exe, MASM, LINK, and GO.BAT must be in the same folder as this page.
+pile segment para stack 'pile'
+  db 256 dup(0)
+pile ends
+
+data segment
+  ; no variables
+data ends
+
+code segment
+  main proc far
+    assume cs:code
+    assume ds:data
+    assume ss:pile
+    mov ax, data
+    mov ds, ax
+    
+    mov ah, 02h ; output character
+    mov dl, 'K' ; 'K' as in "Kaito!"
+    int 21h
+    
+    mov ah, 4Ch
+    int 21h
+  main endp
+code ends
+
+end main
+</textarea>
+    <pre id="output"></pre>
+    <div id="run" hidden>Run!</div>
+    <script src="retardedAO.js"></script>
+  </body>
+</html>

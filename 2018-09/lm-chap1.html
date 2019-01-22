@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>LM: Chapter 1</title>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: monospace;
+    }
+    body {
+      background: black;
+      color: gray;
+      padding: 10px;
+    }
+    pre {
+      white-space: pre-line;
+    }
+    #input, #formatted {
+      width: 500px;
+      padding: 5px;
+      font-size: large;
+    }
+    #input {
+      border-color: transparent;
+      border-width: 0 5 0 0;
+      outline: none;
+    }
+    #input.err {
+      border-color: red;
+      background-color: bisque;
+    }
+    #formatted {
+      display: inline-block;
+    }
+
+    .verse {
+      color: mediumvioletred;
+      font-style: italic;
+    }
+    img {
+      margin: 10px;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>LM: Chapter 1</h1>
+    <br>
+    <h2>What?</h2>
+    <b>Connectors:</b> ! (¬), * (∧), + (∨), -> (→), <-> (↔)
+    <br/><br/>
+    
+    <h2>Do it !</h2>
+    <i class="verse">"Like, I mean, you know, when I do it it's done!" - N. M.</i>
+    <br/><br/>
+    Raw input: <input type="text" id="input" value="(((!A)<->B)+!(C*D))->A" /><br/>
+    Formatted: <div id="formatted">...</div><br/>
+    Notation polonaise: <i id="polish">[just traverse the tree, right to left, top to bottom, and print branches and leafs]</i><br/>
+
+    <br/>
+    L'arbre de décomposition:
+    <br/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+      <style>
+      .node ellipse {
+        rx: 30px;
+        ry: 15px;
+        fill: rebeccapurple;
+      }
+
+      .node text {
+        text-anchor: middle;
+        fill: white;
+        font-size: 12px;
+      }
+
+      .edge {
+        stroke: white;
+        stroke-width: 1;
+      }
+      </style>
+      <g id="graph"></g>
+    </svg>
+    
+    <br/>
+    <h2>Eh?</h2>
+    <pre>
+     <b class="verse">2018-09-05</b>
+     
+     - After skimming through the first three chapters of Ullman's dragon book (1000 pages about compilers *-*) and reading the first chapter of my college's LM ("Logique Mathématique") course, using what stick in my mind, I decided to write a "parser" for mathematical logic expressions (in addition to a few tricks...)
+
+     - For some reason, a 200-line parser I wrote in JavaScript, didn't work correctly.
+
+     - I almost gave in to Despair... but then Miss Minaj inspired me, <i class="verse">"...don't say you can't, say you can, say you can-can..."</i> (Handstand - Nicki Minaj)
+
+     - THEN, I actually reread the effing book and even checked a compiler's source code: <a href="https://github.com/MellowCobra/JS-Pascal-Interpreter/">@MellowCobra/JS-Pascal-Interpreter</a>. (See what I'm doing? I'm acknowledging people's works. I'm a good boy -- I rip off nobody.)
+
+     - Don't expect this thing to work: Tested on Google Chrome 69 (on desktop, so it will probably look like shit on mobile devices); complied using Google's Closure Compiler so that it may work on older versions.
+
+     - I used no library to draw the graph: Using my zero knowledge of SVG, I wrote a script that draws the abstract parse tree directly to SVG (after examining and experimenting with <a href="https://upload.wikimedia.org/wikipedia/commons/0/06/Simple_Parse_Tree_2.svg">a simple parse tree I found on Wikimedia Commons</a>)
+
+     
+    - I'M WELL AWARE OF SOME PROBLEMS IN IT AND HAVE IDEAS ON HOW TO FIX THEM
+
+    * When drawing complex expressions, nodes end up on top of one another. Fix: Treat nodes as physical objects and apply physics on them; or, start with a large distance between nodes, and reduce it after each depth level...
+    
+    * It doesn't properly respect priorities: the "NOT" operator has higher priority than the rest, yet it's being treated as the AND/OR operators. Fix: add extra parenthesis: For example, <b>!A+B</b> becomes <b>(!A)+B</b> and <b>!(A+B)*C</b> becomes <b>(!(A+B))*C</b>
+    </pre>
+    <br/>
+    <script src="lm-chap1.js"></script>
+  </body>
+</html>

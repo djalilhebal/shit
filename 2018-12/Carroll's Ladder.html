@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title>Carroll's Ladder</title>
+  <link rel="stylesheet" href="Carroll's Ladder.css" />
+</head>
+
+<body>
+  <div id="input">
+    <h1>Carroll's Ladder</h1>
+    <i>Miss Minaj says, "I win, I win because I'm a lyricist and I have words in my brain!"</i>
+
+    <br /><br />
+    <input id=x value="cold" /><button>Go!</button><input id=y value="warm" />
+  </div>
+  <div id="output">
+    <b>cold</b> > cord > <b>card</b> > <b>ward</b> > warm
+  </div>
+
+  <br />
+  <pre>
+      <h2>What?</h2>
+      Solves Lewis Carroll's word game Doublets (AKA "Word Ladder"):
+      Given two words X and Y, find a chain ("ladder") of words that take you from X to Y with only one edit a time.
+      Each intermediate word should be a valid/dictionary word.
+      
+      My algorithm is biased towards words that appear in Nicki Minaj's lyrics (in pink).
+    </pre>
+
+  <br />
+  <pre>
+      <h2>Notes</h2>
+      - Tested on Chrome v70. Performance-wise, it sucks.
+      - Uses a wordlist that contains the 50K most common words in English. (This demo actually uses just the first 2K words)
+      - Nicki's words were obtained from an incomplete collection of her lyrics (Check <b>wordli$ter.js</b>: It is the script that created the <b>wordli$t.txt</b> file).
+      - Uses a <i>breadth-first search</i> algorithm on a "graph of words".
+      - Uses <b>Hip</b>, my stupid Array-based <i>heap</i> implementation with only three methods: push, pop, and isEmpty.
+      - The Levenshtein distance can be used to make things interesting, but let's just use the <i>Hamming distance</i> to keep it simple ._.
+    </pre>
+  <script src="wordli$t.js"></script>
+  <script src="Carroll's Ladder.js"></script>
+</body>
+
+</html>
