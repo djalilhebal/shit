@@ -1,0 +1,7 @@
+Make sure the following binary files exist in the current folder (as 'GO.BAT'):
+
+- MASM.EXE
+- LINK.EXE
+- DOSBox.exe
+- SDL.dll
+- SDL_net.dll
