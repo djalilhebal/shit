@@ -27,7 +27,7 @@
     }
     .string { color: gray; }
     .comment {color: lime;font-style: italic;}
-    .keyword, .operator {color: darkmagenta;}
+    .keyword, .operator {color: magenta;}
     .keyword { font-weight: bold; }
     .register {color: cornflowerblue;}
     .number { color: orange; }
@@ -61,10 +61,12 @@
 
   <body onload="init();">
     <textarea id="input" oninput="draw();" spellcheck="false">
-;; RetardedAO -- A retarded MASM write-highlight-run thingy. (2018-11-05)
+;; RetardedAO: A retarded MASM write-highlight-run thingy. (2018-11-05)
 ;; It's not good, but it's good enough for me~~ \(>.<)/
-;; Tested using nwjs v0.23.4 x32, DOSBox v0.74 x32, Windows 10 Pro x64.
-;; Note: DOSBox.exe, MASM, LINK, and GO.BAT must be in the same folder as this page.
+;; Tested with MASM 5.10 x16, DOSBox v0.74-2 x32, nwjs v0.23.4 x32,
+;;   Windows 7 Pro x32, and Windows 10 Pro x64.
+;; Note: This app's window should be maximized for it to work smoothly...
+
 pile segment para stack 'pile'
   db 256 dup(0)
 pile ends
@@ -94,6 +96,6 @@ end main
 </textarea>
     <pre id="output"></pre>
     <div id="run" hidden>Run!</div>
-    <script src="retardedAO.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
