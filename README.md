@@ -6,19 +6,19 @@ I kind of used this repo to keep track of my progress...
 *Most of what's in here are shitty (rudimentary/incomplete/buggy) implementations of some awesome ideas -- 'Wikipedia' them!*
 
 ## "Demos"
-- [A-is-B chatbot](https://dreamski21.github.io/shit/2017-12/a-is-b/)
+- [A-is-B chatbot](https://djalilhebal.github.io/shit/2017-12/a-is-b/)
 
-- [Numbo (TODO)](https://dreamski21.github.io/shit/2017-12/numbo-todo.html) -> [Nimiro (2018-02)](https://dreamski21.github.io/nimiro-2018-02/)
+- [Numbo (TODO)](https://djalilhebal.github.io/shit/2017-12/numbo-todo.html) -> [Nimiro (2018-02)](https://djalilhebal.github.io/nimiro-2018-02/)
 
-- [Leo Learns XO](https://dreamski21.github.io/shit/2018-07/leo-xo.html)
+- [Leo Learns XO](https://djalilhebal.github.io/shit/2018-07/leo-xo.html)
 
-- [LM-Chap1](https://dreamski21.github.io/shit/2018-09/lm-chap1/)
+- [LM-Chap1](https://djalilhebal.github.io/shit/2018-09/lm-chap1/)
 
-- [Zerofy](https://dreamski21.github.io/shit/2018-10/zerofy.html)
+- [Zerofy](https://djalilhebal.github.io/shit/2018-10/zerofy.html)
 
-- [algoSyntaxHighlighter](https://dreamski21.github.io/shit/2017-12/algoSyntaxHighlighter.html) -> [RetardedAO](https://dreamski21.github.io/shit/2018-11/retardedAO/app/)
+- [algoSyntaxHighlighter](https://djalilhebal.github.io/shit/2017-12/algoSyntaxHighlighter.html) -> [RetardedAO](https://djalilhebal.github.io/shit/2018-11/retardedAO/app/)
 
-- [Carroll's Ladder](https://dreamski21.github.io/shit/2018-12/carroll-ladder/)
+- [Carroll's Ladder](https://djalilhebal.github.io/shit/2018-12/carroll-ladder/)
 
 ## "Catalog"
 

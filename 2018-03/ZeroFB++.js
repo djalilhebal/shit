@@ -22,9 +22,9 @@ incoming messages and downloads received pictures, and then, for each downloaded
 
 4) Finally it sends those parts to my inbox... Something like this:
 
-[[dreamski21 :: DATE :: 1-5 :: DATA]]
+[[djalilhebal :: DATE :: 1-5 :: DATA]]
 ...
-[[dreamski21 :: DATE :: 5-5 :: DATA]]
+[[djalilhebal :: DATE :: 5-5 :: DATA]]
 
 5) On the other end, another program (a Chrome extension probably)
   reads the parts,
@@ -105,7 +105,7 @@ function updateModel() {
 
   messages.forEach((message) => {
     // 'Zero>> sender::time::img_id#part-parts::data'
-    // 'Zero>> dreamski21::20180320::img_666_or_idk#1-5::GRE143DHGERHTE...ZzR'
+    // 'Zero>> djalilhebal::20180320::img_666_or_idk#1-5::GRE143DHGERHTE...ZzR'
     const rPart = /^Zero>> (\w+)::(\d+)::(\w+)#(\d+)-(\d+)::(.+)$/;
     const matched = message.match(rPart);
     if (matched) {

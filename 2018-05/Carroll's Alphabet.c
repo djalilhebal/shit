@@ -1,5 +1,5 @@
 // Carroll's Alphabet -- 2018-05-04 (Friday)
-// By Wanis (@blackreapr) and Djalil (@dreamski21)
+// By Wanis (@blackreapr) and Djalil (@djalilhebal)
 // This code is "ungood" (memory management and shit) but it's easy to read
 
 #include <stdio.h>

@@ -4,7 +4,7 @@
  * TODO: Remove 'aloof' words to reduce the file size and improve loading time
  */
 const fs = require('fs');
-const {LyricsDatabase, parseDir} = require('./@dreamski21/lyrics-manager/');
+const {LyricsDatabase, parseDir} = require('./@djalilhebal/lyrics-manager/');
 const print = console.log;
 
 (function main() {
